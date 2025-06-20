@@ -12,8 +12,8 @@
  * constant variables will be used throughout code for consistency
  * - Whenever value/suit is changed, it must be within the valid values
  *
- * @author ???
- * @version ???
+ * @author Esperanza Ramos
+ * @version 1.0
  */
 
 /*
@@ -49,16 +49,27 @@
 public class Card {
 
 	/*** CONSTANT VARIABLES ***/
+	public static final int DEFAULT_VALUE = 1;
+	public static final char DEFAULT_SUIT = '♥';
 
 
 	/*** INSTANCE VARIABLES ***/
+	private int value;
+	private char suit;
+	public char heart;
+	public char diamond;
+	public char club;
+	public char spade;
 
 
 	/*** CONSTRUCTOR METHODS ***/
 	/**
 	 * Default constructor, builds default card object as: A ♥
 	 */
-
+	public card()
+	{
+		this(DEFAULT_VALUE, DEFAULT_SUIT);
+	}
 
 	/**
 	 * Full constructor builds object with all data for instance variables provided.
@@ -69,7 +80,15 @@ public class Card {
 	 * @param suit  one of four suit values (unicode value for heart, diamond,
 	 *              spade, or club)
 	 */
-
+	public Card(int value, char suit, char heart, char diamond, char club, char spade)
+	{
+		this.value = value;
+		this.suit = suit;
+		this.heart = heart;
+		this.diamond = diamond;
+		this.club = club;
+		this.spade = spade;
+	}
 
 	/**
 	 * Copy constructor builds object with all data from Card object provided. No
